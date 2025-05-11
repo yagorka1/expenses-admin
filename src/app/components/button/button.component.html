@@ -1,0 +1,6 @@
+<button class="btn {{ buttonStyle }}"
+        [type]="buttonType"
+        [ngClass]="{small: small, high: high, isLoading: isLoading}"
+        [disabled]="disabled">
+  <ng-content *ngIf="!isLoading"></ng-content>
+</button>
