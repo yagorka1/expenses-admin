@@ -5,7 +5,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
 @Component({
-  selector: 'app-transactions',
+  selector: 'app-sign-in',
   standalone: false,
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss'

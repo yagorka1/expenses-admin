@@ -1,24 +1,35 @@
 <div class="filters">
-  <mat-form-field>
+  <!-- Категория -->
+  <mat-form-field class="field">
     <mat-label>Категория</mat-label>
-    <mat-select [(ngModel)]="filters.category" (selectionChange)="applyFilter()">
+    <mat-select [(ngModel)]="filters.category" (selectionChange)="onCategoryChange()">
       <mat-option value="">Все</mat-option>
-      <mat-option *ngFor="let category of uniqueCategories" [value]="category">
-        {{ category }}
+      <mat-option *ngFor="let category of categories" [value]="category.id">
+        {{ category.name }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="field" *ngIf="filteredSubcategories.length > 0">
+    <mat-label>Подкатегория</mat-label>
+    <mat-select [(ngModel)]="filters.subcategory" (selectionChange)="applyFilter()">
+      <mat-option value="">Все</mat-option>
+      <mat-option *ngFor="let sub of filteredSubcategories" [value]="sub.id">
+        {{ sub.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="field">
     <mat-label>Дата от</mat-label>
     <input matInput [matDatepicker]="fromPicker" [(ngModel)]="filters.dateFrom" (dateChange)="applyFilter()">
     <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
     <mat-datepicker #fromPicker></mat-datepicker>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="field">
     <mat-label>Дата до</mat-label>
-    <input matInput  [matDatepicker]="toPicker" [(ngModel)]="filters.dateTo" (dateChange)="applyFilter()">
+    <input matInput [matDatepicker]="toPicker" [(ngModel)]="filters.dateTo" (dateChange)="applyFilter()">
     <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
     <mat-datepicker #toPicker></mat-datepicker>
   </mat-form-field>

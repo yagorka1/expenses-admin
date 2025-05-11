@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransactionsRoutingModule } from './transactions-routing.module';
@@ -23,6 +23,6 @@ import { MaterialModule } from '../../core/modules/material/material.module';
     MaterialModule,
   ],
   exports: [],
-  providers: [],
+  providers: [DatePipe],
 })
 export class TransactionsModule {}
