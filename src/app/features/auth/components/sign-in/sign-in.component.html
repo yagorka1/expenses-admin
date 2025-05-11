@@ -1,0 +1,19 @@
+<form [formGroup]="form" class="form" (submit)="submit()">
+  <app-input
+    class="input"
+    formControlName="email"
+    [label]="'Email'"
+    type="email"
+  ></app-input>
+
+  <app-input
+    class="input"
+    formControlName="password"
+    [label]="'Password'"
+    type="password"
+  ></app-input>
+
+  <div class="footer">
+    <app-button buttonType="submit">Log in</app-button>
+  </div>
+</form>

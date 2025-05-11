@@ -1,0 +1,28 @@
+<div class="filters">
+  <mat-form-field>
+    <mat-label>Категория</mat-label>
+    <mat-select [(ngModel)]="filters.category" (selectionChange)="applyFilter()">
+      <mat-option value="">Все</mat-option>
+      <mat-option *ngFor="let category of uniqueCategories" [value]="category">
+        {{ category }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Дата от</mat-label>
+    <input matInput [matDatepicker]="fromPicker" [(ngModel)]="filters.dateFrom" (dateChange)="applyFilter()">
+    <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+    <mat-datepicker #fromPicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Дата до</mat-label>
+    <input matInput  [matDatepicker]="toPicker" [(ngModel)]="filters.dateTo" (dateChange)="applyFilter()">
+    <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+    <mat-datepicker #toPicker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+
+<app-table *ngIf="filteredData.length" [displayedColumns]="displayedColumns" [dataSource]="filteredData" [columnHeaders]="columnHeaders" ></app-table>

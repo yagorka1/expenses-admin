@@ -1,0 +1,22 @@
+<label *ngIf="label" class="native-label native-label__admin" [class.required]="isRequiredLabel">
+  {{ label }}
+</label>
+
+<input
+  #input
+  [(ngModel)]="value"
+  (ngModelChange)="onChange($event)"
+  (blur)="onTouched()"
+  [class.card-input]="cardInputClass"
+  [class.lock-field]="isLockFieldClass"
+  [class.filed]="isFilledClass"
+  [autocomplete]="isAutocompleteDisabled ? 'disable' : true"
+  class="native-input custom-input custom-input--{{ inputAlign }}"
+  [placeholder]="placeholder"
+  [attr.disabled]="isFormControlDisabled || isDisabled ? true : null"
+  [type]="type"
+  [value]="value"
+  [readOnly]="isReadonly"
+  [title]="title || label"
+  />
+
