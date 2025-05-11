@@ -19,3 +19,12 @@ th, td {
 .pagination button {
   margin: 0 0.5rem;
 }
+
+.mat-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mat-link:hover {
+  color: rgba(21, 42, 70, 0.61);
+}

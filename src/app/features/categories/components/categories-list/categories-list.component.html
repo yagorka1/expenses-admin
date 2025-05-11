@@ -1,0 +1,15 @@
+<div class="filters">
+  <div class="filter-row">
+    <mat-form-field appearance="fill" class="filter-input">
+      <mat-label>Поиск...</mat-label>
+      <input matInput [(ngModel)]="filters.name" (input)="applyFilter()" placeholder="Введите название" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="filter-button" (click)="openAddDialog()">
+      Добавить Категорию
+    </button>
+  </div>
+</div>
+
+
+<app-table *ngIf="filteredData.length" [displayedColumns]="displayedColumns" [dataSource]="filteredData" [columnHeaders]="columnHeaders" ></app-table>

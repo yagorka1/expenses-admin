@@ -8,7 +8,8 @@ import {
   MatRowDef,
   MatTable
 } from '@angular/material/table';
-import { NgForOf } from '@angular/common';
+import { NgForOf, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -25,7 +26,9 @@ import { NgForOf } from '@angular/common';
     MatHeaderRow,
     MatRow,
     MatCell,
-    MatHeaderCell
+    MatHeaderCell,
+    RouterLink,
+    NgIf,
   ],
   styleUrl: './table.component.scss'
 })

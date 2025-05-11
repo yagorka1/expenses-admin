@@ -35,6 +35,11 @@ export const routes: Routes = [
             loadChildren: () =>
               import('../features/transactions/transactions.module').then((m) => m.TransactionsModule),
           },
+          {
+            path: 'categories',
+            loadChildren: () =>
+              import('../features/categories/categories.module').then((m) => m.CategoriesModule),
+          },
         ],
       },
     ],
