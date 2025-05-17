@@ -8,9 +8,10 @@ import { TransactionsComponent } from './components/transactions/transactions.co
 import { TransactionsListComponent } from './components/transactions-list/transactions-list.component';
 import { TableComponent } from '../../components/table/table.component';
 import { MaterialModule } from '../../core/modules/material/material.module';
+import { TransactionDetailsComponent } from './components/transaction-details/transaction-details.component';
 
 @NgModule({
-  declarations: [TransactionsComponent, TransactionsListComponent],
+  declarations: [TransactionsComponent, TransactionsListComponent, TransactionDetailsComponent],
   imports: [
     CommonModule,
     TransactionsRoutingModule,

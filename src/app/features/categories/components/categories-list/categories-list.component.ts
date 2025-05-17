@@ -14,10 +14,10 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class CategoriesListComponent implements OnInit {
   public displayedColumns: string[] = ['name', 'description', 'link'];
-  public columnHeaders: { [key: string]: string } = {
-    name: 'Название',
-    description: 'Описание',
-    link: 'Подкатегории'
+  public columnHeaders: { [key: string]: { name: string, isSortable: boolean } } = {
+    name: { name: 'Название', isSortable: false },
+    description: { name: 'Описание', isSortable: false },
+    link: { name: 'Подкатегории', isSortable: false },
   };
   public dataSource: CategoryInterface[] = [];
   public filteredData: CategoryInterface[] = [];
@@ -46,8 +46,6 @@ export class CategoriesListComponent implements OnInit {
             linkText: 'Подкатегории'
           };
         });
-
-        console.log(this.filteredData);
       }
     })
   }

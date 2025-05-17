@@ -1,0 +1,17 @@
+.data {
+  display: flex;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+  width: 35rem;
+
+  .label {
+    width: 7rem;
+    margin-right: 3rem;
+  }
+}
+
+.description {
+  font-weight: 500;
+  margin-top: 2rem;
+}

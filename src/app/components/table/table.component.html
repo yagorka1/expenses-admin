@@ -1,22 +1,26 @@
 <table mat-table [dataSource]="dataSource">
   <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
-    <th mat-header-cell *matHeaderCellDef> {{ columnHeaders[column] }} </th>
+    <th mat-header-cell *matHeaderCellDef>
+      <div class="header-cell">
+        {{ columnHeaders[column].name }}
+        <mat-icon *ngIf="columnHeaders[column].isSortable" class="sort-icon" (click)="sort.emit(column)">sort</mat-icon>
+      </div>
+    </th>
+
     <td mat-cell *matCellDef="let row">
       <ng-container *ngIf="row[column]">
         <a *ngIf="column === 'link' && row[column]" [routerLink]="row[column]" class="mat-link">
           {{ row.linkText || 'Перейти' }}
         </a>
 
-        <span *ngIf="column !== 'link'">{{ row[column] }}</span>
+        <span *ngIf="column !== 'link'">{{ column === 'date' ? (row[column] | date) : row[column] }}</span>
       </ng-container>
     </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  <tr mat-row class="tr"  *matRowDef="let row; columns: displayedColumns" (click)="openDetails.emit(row)"></tr>
 </table>
-
-
 
 
 <!--<div class="pagination" *ngIf="dataSource.length > 0">-->

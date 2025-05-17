@@ -1,0 +1,13 @@
+<div class="content">
+  <div class="data" *ngFor="let data of viewData">
+    <div class="label">{{ data.key }}</div>
+    <div class="value">{{ data.value }}</div>
+  </div>
+
+  <p class="description">Сумма в других валютах:</p>
+
+  <div class="data" *ngFor="let data of amountsViewData">
+    <div class="label">{{ data.key }}</div>
+    <div class="value">{{ data.value }}</div>
+  </div>
+</div>

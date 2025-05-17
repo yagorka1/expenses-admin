@@ -8,5 +8,6 @@ export interface ExpenseInterface {
   subcategoryId: string;
   person: string;
   description: string;
-  date: string
+  date: string;
+  amounts: { [key: string]: number };
 }
