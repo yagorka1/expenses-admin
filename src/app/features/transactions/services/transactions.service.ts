@@ -23,4 +23,12 @@ export class TransactionsService {
       }),
     );
   }
+
+  public loadTransaction(id: string): Observable<any> {
+    return this.http.get(TRANSACTIONS_API.transactionId(id)).pipe(
+      tap((resp) => {
+       return resp;
+      }),
+    );
+  }
 }

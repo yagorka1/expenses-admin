@@ -10,6 +10,10 @@ th, td {
   border-bottom: 1px solid #ddd;
 }
 
+.tr {
+  cursor: pointer;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -27,4 +31,20 @@ th, td {
 
 .mat-link:hover {
   color: rgba(21, 42, 70, 0.61);
+}
+
+.sort-icon {
+  cursor: pointer;
+}
+
+.header-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sort-icon {
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 0.4rem;
 }

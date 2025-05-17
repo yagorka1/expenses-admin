@@ -1,5 +1,4 @@
 <div class="filters">
-  <!-- Категория -->
   <mat-form-field class="field">
     <mat-label>Категория</mat-label>
     <mat-select [(ngModel)]="filters.category" (selectionChange)="onCategoryChange()">
@@ -21,6 +20,16 @@
   </mat-form-field>
 
   <mat-form-field class="field">
+    <mat-label>Валюта</mat-label>
+    <mat-select [(ngModel)]="filters.currency" (selectionChange)="applyFilter()">
+      <mat-option value="">Все</mat-option>
+      <mat-option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="field">
     <mat-label>Дата от</mat-label>
     <input matInput [matDatepicker]="fromPicker" [(ngModel)]="filters.dateFrom" (dateChange)="applyFilter()">
     <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
@@ -33,7 +42,21 @@
     <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
     <mat-datepicker #toPicker></mat-datepicker>
   </mat-form-field>
+
+
+  <mat-form-field class="field">
+    <mat-label>Кто потратил?</mat-label>
+    <mat-select [(ngModel)]="filters.person" (selectionChange)="applyFilter()">
+      <mat-option value="">Все</mat-option>
+      <mat-option *ngFor="let person of persons" [value]="person">
+        {{ person }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
 
 
-<app-table *ngIf="filteredData.length" [displayedColumns]="displayedColumns" [dataSource]="filteredData" [columnHeaders]="columnHeaders" ></app-table>
+<app-table *ngIf="filteredData.length" [displayedColumns]="displayedColumns" [dataSource]="filteredData"
+           (sort)="sort($event)"
+           (openDetails)="openDetails($event)"
+           [columnHeaders]="columnHeaders"></app-table>

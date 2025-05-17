@@ -16,10 +16,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SubcategoriesListComponent implements OnInit {
   public displayedColumns: string[] = ['name', 'description', 'isNecessary'];
-  public columnHeaders: { [key: string]: string } = {
-    name: 'Название',
-    description: 'Описание',
-    isNecessary: 'Обязательные траты?'
+  public columnHeaders: { [key: string]: { name: string, isSortable: boolean } } = {
+    name: { name: 'Название', isSortable: false },
+    description: { name: 'Описание', isSortable: false },
+    isNecessary: { name: 'Обязательные траты?', isSortable: false },
   };
   public dataSource: CategoryInterface[] = [];
   public filteredData: CategoryInterface[] = [];

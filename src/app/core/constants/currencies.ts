@@ -1,3 +1,7 @@
 export const CURRENCIES = {
-  USD_CURRENCY_CODE: '431',
+  EUR: 'EUR',
+  USD: 'USD',
+  BYN: 'BYN',
+  RSD: 'RSD',
+  PLN: 'PLN',
 };
