@@ -10,9 +10,10 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { AddSubcategoryDialogComponent } from './components/add-category-dialog/add-subcategory-dialog.component';
 import { SubcategoriesListComponent } from './components/subcategories-list/subcategories-list.component';
+import { AddCategoryDialogComponent } from './components/add-subcategory-dialog/add-category-dialog.component';
 
 @NgModule({
-  declarations: [CategoriesComponent, CategoriesListComponent, AddSubcategoryDialogComponent, SubcategoriesListComponent],
+  declarations: [CategoriesComponent, CategoriesListComponent, AddSubcategoryDialogComponent, AddCategoryDialogComponent, SubcategoriesListComponent],
   imports: [
     CommonModule,
     CategoriesRoutingModule,
@@ -24,7 +25,9 @@ import { SubcategoriesListComponent } from './components/subcategories-list/subc
     FormsModule,
     MaterialModule,
   ],
-  exports: [],
+  exports: [
+    CategoriesComponent
+  ],
   providers: [],
 })
 export class CategoriesModule {}

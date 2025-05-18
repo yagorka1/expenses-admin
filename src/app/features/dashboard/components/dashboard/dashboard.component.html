@@ -1,0 +1,18 @@
+<app-dashboard-filters></app-dashboard-filters>
+
+<div class="charts">
+  <app-persons-chart *ngIf="filteredData?.length" [data]="filteredData" [totalAmount]="totalAmount" ></app-persons-chart>
+
+  <app-categories-chart *ngIf="filteredData?.length" [data]="filteredData" [totalAmount]="totalAmount" ></app-categories-chart>
+
+  <app-subcategories-chart *ngIf="filteredData?.length" [data]="filteredData" [totalAmount]="totalAmount"></app-subcategories-chart>
+</div>
+
+<div class="charts">
+  <app-categories-subcategories-chart *ngIf="filteredData?.length" [data]="filteredData" [totalAmount]="totalAmount"></app-categories-subcategories-chart>
+</div>
+
+<div class="charts">
+  <app-expenses-by-month-chart *ngIf="filteredData?.length" [data]="filteredData" [totalAmount]="totalAmount"></app-expenses-by-month-chart>
+</div>
+

@@ -1,0 +1,49 @@
+.chart-wrapper {
+  display: flex;
+
+  .chart {
+    width: 40rem;
+    height: 40rem;
+    display: contents;
+  }
+
+  .custom-legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    height: fit-content;
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    .color-box {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .label {
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .value {
+      font-weight: bold;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+  }
+}
+
+

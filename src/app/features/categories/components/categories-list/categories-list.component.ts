@@ -4,6 +4,7 @@ import { CategoriesService } from '../../services/categories.service';
 import { CategoryInterface } from '../../interfaces/category-interface';
 import { AddSubcategoryDialogComponent } from '../add-category-dialog/add-subcategory-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { AddCategoryDialogComponent } from '../add-subcategory-dialog/add-category-dialog.component';
 
 @UntilDestroy()
 @Component({
@@ -65,7 +66,7 @@ export class CategoriesListComponent implements OnInit {
   }
 
   public openAddDialog(): void {
-    this.dialog.open(AddSubcategoryDialogComponent).afterClosed().pipe(untilDestroyed(this)).subscribe((data) => {
+    this.dialog.open(AddCategoryDialogComponent).afterClosed().pipe(untilDestroyed(this)).subscribe((data) => {
       if (data) {
         this.resetFilters();
         this.loadTransactions();

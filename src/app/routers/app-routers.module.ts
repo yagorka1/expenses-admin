@@ -8,39 +8,38 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'transactions',
-  },
-  // Auth
-  {
-    path: 'transactions',
-    canActivate: [AlreadyAuthenticatedGuard],
-    loadChildren: () => import('../features/auth/auth.module').then((m) => m.AuthModule),
+    redirectTo: 'admin',
   },
 
   // Application
   {
-    path: '',
+    path: 'admin',
     component: MainLayoutComponent,
     canActivate: [AuthGuard],
     children: [
       // Admin
       {
-        path: 'admin',
+        path: '',
         data: {
           crumbs: null,
         },
-        children: [
-          {
-            path: 'transactions',
-            loadChildren: () =>
-              import('../features/transactions/transactions.module').then((m) => m.TransactionsModule),
-          },
-          {
-            path: 'categories',
-            loadChildren: () =>
-              import('../features/categories/categories.module').then((m) => m.CategoriesModule),
-          },
-        ],
+        pathMatch: 'full',
+        redirectTo: 'dashboard',
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('../features/dashboard/dashboard.module').then((m) => m.DashboardModule),
+      },
+      {
+        path: 'transactions',
+        loadChildren: () =>
+          import('../features/transactions/transactions.module').then((m) => m.TransactionsModule),
+      },
+      {
+        path: 'categories',
+        loadChildren: () =>
+          import('../features/categories/categories.module').then((m) => m.CategoriesModule),
       },
     ],
   },
