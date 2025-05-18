@@ -1,0 +1,25 @@
+<div class="chart-wrapper">
+  <div class="chart">
+    <ngx-charts-bar-vertical
+      [view]="[700, 400]"
+      [scheme]="colorScheme"
+      [results]="multi"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legendTitle]="''"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    ></ngx-charts-bar-vertical>
+  </div>
+
+  <div class="custom-legend">
+    <div *ngFor="let item of multi; let i = index" class="legend-item">
+      <span class="color-box" [style.background]="colors[i]"></span>
+      <span class="label">{{ item.name }}</span>
+      <span class="value">{{ item.value }} {{ currency }}</span>
+    </div>
+  </div>
+</div>
