@@ -61,6 +61,6 @@ export class DashboardComponent {
         ...item,
       }));
 
-    this.totalAmount = this.filteredData.reduce((sum: number, i: ExpenseInterface) => sum + i.amount, 0);
+    this.totalAmount = this.filteredData.reduce((sum: number, i: ExpenseInterface) => sum + i.amounts[this.currentFilters.mainCurrency], 0);
   }
 }

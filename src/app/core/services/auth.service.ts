@@ -30,7 +30,7 @@ export class AuthService {
       tap((resp) => {
         // @ts-ignore
         AuthService.createSession(resp.accessToken);
-        this.router.navigate([GLOBAL_ROUTES.MAIN]);
+        this.router.navigate([GLOBAL_ROUTES.DASHBOARD]);
       }),
     );
   }

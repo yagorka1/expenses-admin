@@ -11,6 +11,10 @@ export const routes: Routes = [
     redirectTo: 'admin',
   },
 
+  { path: 'auth', canActivate: [AlreadyAuthenticatedGuard],
+    loadChildren: () => import('../features/auth/auth.module').then((m) => m.AuthModule),
+  },
+
   // Application
   {
     path: 'admin',
