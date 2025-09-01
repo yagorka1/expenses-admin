@@ -55,4 +55,9 @@ export class AuthService {
   public isSignedIn(): boolean {
     return !!this.getAuthenticationToken();
   }
+
+  public signOutWithoutRequest(): void {
+    AuthService.destroySession();
+    this.router.navigate([GLOBAL_ROUTES.AUTH]);
+  }
 }
