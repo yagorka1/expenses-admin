@@ -1,9 +1,10 @@
-<form [formGroup]="form" class="form" (submit)="submit()">
+<form [formGroup]="form" class="form" (submit)="submit()" data-testid="sign-in-form">
   <app-input
     class="input"
     formControlName="email"
     [label]="'Email'"
     type="email"
+    data-testid="email-input"
   ></app-input>
 
   <app-input
@@ -11,9 +12,10 @@
     formControlName="password"
     [label]="'Password'"
     type="password"
+    data-testid="password-input"
   ></app-input>
 
   <div class="footer">
-    <app-button buttonType="submit">Log in</app-button>
+    <app-button buttonType="submit" data-testid="submit-button">Log in</app-button>
   </div>
 </form>
